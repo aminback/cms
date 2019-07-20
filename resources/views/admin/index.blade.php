@@ -1,1 +1,1 @@
-@exteds('')
+@include('layouts.admin')
