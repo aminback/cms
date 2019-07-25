@@ -1,1 +1,1 @@
-@include('layouts.admin')
+@include('admin.index')
