@@ -8,11 +8,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('users.index')}}">
                     <span data-feather="file"></span>
                    All Users
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('users.create')}}">
                     <span data-feather="file"></span>
                     Add Users
                 </a>

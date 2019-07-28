@@ -53,13 +53,13 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="file">File</label>
-                <input type="file" class="form-control" name="file" id="file" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
                 <label for="photo_id">Photo</label>
-                <input type="text" class="form-control" name="photo_id" id="file" aria-describedby="photo_id">
+                <input type="file" class="form-control" name="photo_id" id="photo_id" aria-describedby="emailHelp">
             </div>
+            {{--<div class="form-group">--}}
+                {{--<label for="photo_id">Photo</label>--}}
+                {{--<input type="text" class="form-control" name="photo_id" id="file" aria-describedby="photo_id">--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" name="password" id="password" placeholder="enter Password">
