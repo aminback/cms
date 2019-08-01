@@ -25,11 +25,11 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="exampleInputPassword1" placeholder="Enter name">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
             </div>
 
             <div class="form-group">
-                <label for="name">Email address</label>
+                <label for="eamil">Email address</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
