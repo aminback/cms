@@ -9,6 +9,7 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -168,10 +169,19 @@ class AdminUsersController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return string
      */
-    public function destroy($id)
+    public function destroy($id , Request $request)
     {
-        //
+      $user =    User::findOrFail($id);
+
+      unlink(public_path() . $user->photo->file);  // for delete image of user from the images file on public directory
+
+        $user->delete();
+
+//         Session::flash(' deleted_user ', 'this user has been deleted');
+        $request->session()->flash('deleted_user', 'this user has been deleted');
+
+        return redirect('/admin/users');
     }
 }

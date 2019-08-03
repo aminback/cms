@@ -77,9 +77,20 @@
                             <input type="password" class="form-control" name="password" id="password" value="{{$user->password}}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Edit User</button>
+                        <button type="submit" class="btn btn-primary col-sm-5">Edit User</button>
                     </form>
+                    {{--<div class="col-sm-9">--}}
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('users.destroy' , $user->id) }}" style="padding-bottom: 20px">
+                            {{csrf_field()}}
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger col-sm-5">Delete User</button>
+                        </form>
+                    {{--</div>--}}
                 </div>
+
+
+
+
                 <div class="col">
 
                     @include('includes.form_error')
