@@ -23,11 +23,11 @@
                 </p>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('posts.index')}}">
                     <span data-feather="shopping-cart"></span>
                    All Posts
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('posts.create')}}">
                     <span data-feather="shopping-cart"></span>
                    Add Post
                 </a>
