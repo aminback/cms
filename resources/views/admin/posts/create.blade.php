@@ -39,8 +39,10 @@
             <div class="form-group">
                 <label for="category_id">Category</label>
                 <select class="form-control" id="category_id" name="category_id" >
-                    <option value="0"> php </option>
-                    <option value="1"> javascript </option>
+                    <option selected>Choose Option</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
 
                 </select>
             </div>
