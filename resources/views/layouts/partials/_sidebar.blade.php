@@ -38,13 +38,13 @@
                 </p>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('categories.index')}}">
                     <span data-feather="users"></span>
-                   All Customeris
+                   All Categories
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('categories.create')}}">
                     <span data-feather="users"></span>
-                    Add Customeri
+                    Create Category
                 </a>
             </li>
             <li class="nav-item">

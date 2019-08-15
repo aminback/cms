@@ -84,7 +84,7 @@ class AdminUsersController extends Controller
 
         User::create($input);
 
-        return redirect('/admin/posts');
+        return redirect('/admin/users');
 
 
 

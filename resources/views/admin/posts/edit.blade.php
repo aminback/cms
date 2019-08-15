@@ -29,7 +29,65 @@
 
 
         <h2>Edit Posts</h2>
+        <div class="container">
+            <div class="row">
+                <div class=" col-sm-3 ">
 
+                    <img src="{{$posts->photo ? $posts->photo->file : 'http://placehold.it/400x400'}}" alt="" class="img-fluid rounded">
+
+
+                </div>
+
+                <div class=" col-sm-9 ">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('posts.update' , $posts->id) }}" style="padding-bottom: 20px">
+                    {{csrf_field()}}
+                    @method('PATCH')
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="title" id="title" value="{{$posts->title}}">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="category_id">Category</label>
+                        <select class="form-control" id="category_id" name="category_id" >
+                            <option selected>Choose Option</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="photo_id">Photo</label>
+                        <input type="file" class="form-control" name="photo_id" id="photo_id" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="body">Description</label>
+                        <textarea class="form-control" id="body" name="body" rows="3" >{{$posts->body}}</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary col-sm-5">Edit Post</button>
+                </form>
+
+                <form method="POST" enctype="multipart/form-data" action="{{ route('posts.destroy' , $posts->id) }}" style="padding-bottom: 20px">
+                    {{csrf_field()}}
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger col-sm-5">Delete Post</button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+
+            @include('includes.form_error')
+
+
+        </div>
     </main>
 
 @stop

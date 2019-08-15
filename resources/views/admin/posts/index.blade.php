@@ -50,10 +50,10 @@
                         <tr>
                             <td>{{$post->id}}</td>
                             <td><img  height="50" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
-                            <td>{{$post->user->name}}</td>
+                            <td><a href="{{route('posts.edit' , $post->id)}}">{{$post->user->name}}</a></td>
                             <td>{{$post->category ? $post->category->name : 'Uncategorised'}}</td>
                             <td>{{$post->title}}</td>
-                            <td>{{$post->body}}</td>
+                            <td>{{Str::limit($post->body , 7)}}</td>
                             <td>{{$post->created_at->diffForHumans()}}</td>
                             <td>{{$post->updated_at->diffForHumans()}}</td>
                         </tr>
